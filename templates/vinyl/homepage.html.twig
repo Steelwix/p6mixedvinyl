@@ -1,14 +1,21 @@
-<h1>{{ title }}</h1>
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{ parent() }}
+	| Create a new record
+{% endblock %}
+{% block body %}
+	<h1>{{ title }}</h1>
 
-<div>
-	Tracks
+	<div>
+		Tracks
 
-	<ul>
-		{% for track in tracks %}
-			<li>{{track.artist}}
-				-
-				{{track.song}}</li>
-		{% endfor %}
-	</ul>
-</div>
+		<ul>
+			{% for track in tracks %}
+				<li>{{track.artist|upper}}
+					-
+					{{track.song}}</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
 {#Twig Commentaires#}
